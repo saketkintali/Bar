@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head lang="en">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width">
+	    <title>Bartender Problem</title>
+	    <link rel="stylesheet" href="style.css">
+	     <link rel="stylesheet" href="FullShrink.css">
+
+	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	    <script src="app.js"></script>
+	    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	</head>
+  <body class="body">
+  	<div class="row">
+  		<header>Bar Stock</header>
+    	<div class="col-md-3 underline">
+    		<ul style="list-style-type: none">
+     			<li>Vodka <a class="units"> ML </a> <a class="amt"> 750 &nbsp;&nbsp; </a></li>
+     			<li>Gin <a class="units"> L </a> <a class="amt"> 1.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a></li>
+     			<li>Tequila <a class="units"> ML </a> <a class="amt"> 750 &nbsp;&nbsp; </a> </li>
+     			<li>Whiskey <a class="units"> ML </a> <a class="amt"> 750 &nbsp;&nbsp; </a> </li>
+    	</div>
+    	<div class="col-md-3 underline">
+    		<ul style="list-style-type: none">
+     			<li>Sweet Vermouth <a class="units"> ML </a> <a class="amt"> 750 &nbsp;&nbsp; </a> </li>
+     			<li>Dry Vermouth <a class="units"> ML </a> <a class="amt"> 750 &nbsp;&nbsp; </a> </li>
+     			<li>Bloody Mary Mix <a class="units"> L </a> <a class="amt"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a> </li>
+    		</ul>
+    	</div>
+    	<div class="col-md-3 underline">
+    		<ul style="list-style-type: none">
+				<li>Agave Nectar <a class="units"> Oz </a> <a class="amt"> 24 &nbsp;&nbsp; </a> </li>
+            	<li>Orange Juice <a class="units"> Oz </a> <a class="amt"> 48 &nbsp;&nbsp; </a> </li>
+            	<li>Limes <a class="units"> &nbsp;&nbsp; </a> <a class="amt"> 36 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </a> </li>
+        	</ul>
+    	</div>
+    	<div class="col-md-3 underline">
+    		<ul style="list-style-type: none">
+    			<li>Cherries <a class="units"> &nbsp;&nbsp; </a> <a class="amt"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a> </li>
+            	<li>Celery Stalks <a class="units"> &nbsp;&nbsp; </a> <a class="amt"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a> </li>
+            	<li>Olives <a class="units"> &nbsp;&nbsp; </a> <a class="amt"> 24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a> </li>
+        	</ul>
+    	</div>
+    </div>
+	  	<header>Orders</header>
+	  	<div class="container">
+	      <div class="col-md-1"></div>
+	      <div class="col-md-2 white">
+	        <div class="drink">Bloody Mary</div>
+	        <div class="ingredients">
+	        	<p>2oz Vodka</p>
+	        	<p>4oz Bloody Mary Mix</p>
+	        	<p>1 Celery Stalk</p>
+	        </div>
+	        <div class="values">
+		        <div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/plus.png" name="plus" id="img" onclick="alert('Hey Saket!! Thanks for clicking');"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input id="qty1" type="text" value="0" class="qty"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/minus.png" name="minus" id="img" onclick="minus();"/></div>
+	    	</div>
+	    </div>
+	    <div class="col-md-2 white">
+	        <div class="drink">Martini</div>
+	        <div class="ingredients">
+	       		<p>2oz Gin</p>
+	        	<p>1oz Dry vermouth</p>
+	        	<p>1 Olive</p>
+	        </div>
+	        <div class="values">
+		        <div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/plus.png" id="img" class="add" onclick="add();"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input id="qty2" type="text" value="0" class="qty"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/minus.png" name="minus" id="img" onclick="minus();"/></div>
+	    	</div>
+	    </div>
+	      <div class="col-md-2 white">
+	        <div class="drink">Margarita</div>
+	        <div class="ingredients">
+	        	<p>2oz Tequila</p>
+	        	<p>1oz Orange Juice</p>
+	        	<p>1oz Agave Nector</p>
+	        	<p>1 Lime</p>
+	        </div>
+	        <div class="values">
+		        <div ng-controller="HomeCtrl as mctrl" class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/plus.png" name="plus" id="img"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input id="qty3" type="text" value="0" class="qty"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/minus.png" name="minus" id="img"/></div>
+	    	</div>
+	      </div>
+	      <div class="col-md-2 white">
+	        <div class="drink">Screw Driver</div>
+	        <div class="ingredients">
+	        	<p>2oz Vodka</p>
+	        	<p>4oz Orange Juice</p>
+	        </div>
+	      		<div class="values">
+		        <div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/plus.png" id="img"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input id="qty4" type="text" value="0" class="qty"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/minus.png" id="img"/></div>
+	    	</div>
+	      </div>
+	      <div class="col-md-2 white">
+	        <div class="drink">Manhattan</div>
+	        <div class="ingredients">
+	        	<p>2oz Whiskey</p>
+	        	<p>1oz Sweet Vermouth</p>
+	        	<p>1 Cherry</p>
+	        </div>
+	         	<div class="values">
+		        <div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/plus.png" name="plus" id="img" onclickk="add();"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input id="qty5" type="text" value="0" class="qty"/></div>
+		    	<div class="col-xs-4 col-md-4 nopadding"><input type="image" src="Assets/minus.png" name="minus" id="img" onclick="minus();"/></div>
+	    	</div>
+	      </div>
+	      <div class="col-md-1"></div>
+	    </div>
+	    <br/><br/>
+	    <div class="container">
+	    	<div class="col-md-5"></div>
+	    	<div class="col-md-3">
+            <button class="con1" type="button">Place Order</button>
+	    	</div>
+	    	<div class="col-md-4"></div>
+         </div>
+ </body>
+  </html>

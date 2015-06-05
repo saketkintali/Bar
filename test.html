@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="HomeCtrl as mctrl">
+
+  <head>
+    <head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-controller="HomeCtrl as mctrl">{{mctrl.myname}}</title>
+    <link rel="stylesheet" href="style1.css">
+     <link rel="stylesheet" href="FullShrink.css">
+     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="angular.js"></script>
+    <script src="app1.js"></script>
+</head>
+  <body class="body">
+<div class="container" ng-controller="stock as st">
+    <div class="col-md-3 underline" ng-repeat="u in st.stock">
+        <div class="col-md-7 stuff">
+         {{u.soda}}
+        </div>
+        <div class="col-md-4 amount">
+        {{u.measurement}}
+        {{u.units}}
+        </div>
+</div>
+ <div class="values">
+         <table>
+          <tr>
+          <td class="nopadding"><input type="image" name="add" src="Assets/plus.png" /></td>
+          <td class="nopadding"><input id="qty2" type="text" value="0"/></td>
+          <td class="nopadding"><input type="image" name="minus" src="Assets/minus.png"/></td>
+        </tr>
+        </table>
+  <br/>
+  <br/>
+<table>
+          <tr>
+          <td class="nopadding"><input type="image" name="add" src="Assets/plus.png" ng-click="mctrl.add()" /></td>
+          <td class="nopadding"><input id="qty2" type="text" ng-model="mctrl.count"></td>
+          <td class="nopadding"><input type="image" name="minus" src="Assets/minus.png" ng-click="mctrl.minus()"/></td>
+        </tr>
+        </table>
+        <br/>
+        <br/>
+    <button class="con1" type="button">Place Order</button>
+    <br/>
+    <div>
+      <h1> Hello Saket!! This is {{mctrl.myname}}</h1>
+    </div>
+ </body>
+  </html>
+

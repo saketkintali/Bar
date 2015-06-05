@@ -1,0 +1,21 @@
+
+
+@media screen and (max-width: 800px) {
+.underline
+{
+    width: 39%;
+}
+}
+
+@media screen and (max-width: 640px){
+.underline{
+    width: 50%;
+}
+}
+
+@media screen and (max-width: 320px){
+.underline{
+    width: 100%;
+    float: none;
+}
+}

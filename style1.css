@@ -1,0 +1,66 @@
+.amount,.stuff {
+	float: left;
+	color: #EAB5F1;
+}
+
+.container p {
+border-bottom: 1px solid black;
+}
+
+.body {
+	background: black;
+}
+
+@media screen and (max-width: 800px) {
+.container
+{
+    width: 33%;
+    border-bottom: 1px solid #000000;
+}
+}
+
+@media screen and (max-width: 640px){
+.container {
+    width: 50%;
+}
+}
+
+@media screen and (max-width: 320px){
+.container { 
+    width: 100%;
+    float: none;
+}
+}
+
+.white {
+	color: #ffffff;
+}
+
+@media (min-width: @screen-xs-min) { 
+ .container {
+ 	width: 33%;
+ }
+
+ }
+
+@media (min-width: @screen-md-min) { 
+    .container {
+    	width: 50%;
+    }
+ }
+
+ @media (max-width: @screen-md-max) { 
+
+ .container {
+ 	width: 100%;
+ }
+ 
+
+ .con1 {
+
+	padding: 10px 10px 10px 10px;
+    width: 50px;
+}
+h1 {
+	color: #ffffff;
+}
